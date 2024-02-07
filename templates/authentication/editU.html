@@ -1,0 +1,63 @@
+{% load static %}
+{% load messages %}
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <title>url In url</title>
+</head>
+
+<body class="bodycss">
+    <form method="post">
+        {% csrf_token %}
+        <header>
+            <h1 class="h1">DOMAIN-IN-DOMAIN</h1>
+        </header>
+
+        {% for message in messages %}
+        <div class="alert">
+
+            <button id="close_btn" type="button" onclick="close_message()"><strong>Message:</strong> {{ message }}
+                x</button>
+        </div>
+        {% endfor %}
+
+
+        <div class="input_card">
+            <div class="row">
+
+                <label class="for-label">password</label>
+                <input class="input_feed" type="text" placeholder="enter password" name="password">
+            </div>
+            <div class="row">
+                <label class="for-label">New url</label>
+                <input class="input_feed" type="text" placeholder="enter New url" name="newurl">
+            </div>
+            <div class="row">
+                <label class="for-label">re-enter url </label>
+                <input class="input_feed" type="text" placeholder="re-enter url" name="reenter_newurl">
+            </div>
+            <input class="anybutton" type="submit" value="save">
+        </div>
+
+    </form>
+    <br><br>
+    <center>
+        <div class="redirect_section">
+            <center>
+                <a href="homeU.html" class="anybutton">logout</a>
+                <a class="anybutton" href="editM.html">Go Back</a>
+                <a class="anybutton" href="homeL.html">Go To Home</a>
+            </center>
+    </center>
+    <br>
+    <marquee behavior="scroll" direction="left">if you are lucky! then i am Lucky. If yu are bot Fellow then i am bot
+        Fellow!
+    </marquee>
+    <footer>
+        <p>Copyright &copy; 1992 urlaInurl</p>
+    </footer>
+</body>
+
+</html>

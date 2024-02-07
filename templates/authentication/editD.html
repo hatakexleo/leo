@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+
+    <title>Domain In Domain</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+
+<body class="bodycss">
+    <form method="post">
+        {% csrf_token %}
+        <header>
+            <h1 class="h1">DOMAIN-IN-DOMAIN</h1>
+        </header>
+
+        {% for message in messages %}
+        <div class="alert">
+
+            <button id="close_btn" type="button" onclick="close_message()"><strong>Message:</strong> {{ message }}
+                x</button>
+        </div>
+        {% endfor %}
+
+        <div class="input_card">
+            <div class="row">
+                <label class="for-label">password</label>
+                <input class="input_feed" type="text" placeholder="enter password" name="password">
+            </div>
+            <div class="row">
+                <label class="for-label">New Domain</label>
+                <input class="input_feed" type="text" placeholder="enter New Domain" name="newDomain">
+            </div>
+            <div class="row">
+                <label class="for-label">re-enter Domain </label>
+                <input class="input_feed" type="text" placeholder="re-enter Domain" name="reenter_newDomain">
+            </div>
+            <input class="anybutton" type="submit" value="save">
+        </div>
+
+    </form>
+    <br><br>
+    <center>
+        <div class="redirect_section">
+            <center>
+                <a class="anybutton" href="editM.html">Go Back</a>
+                <a class="anybutton" href="homeL.html">Go To Home</a>
+            </center>
+    </center>
+    <br>
+    <marquee behavior="scroll" direction="left">if you are lucky! then i am Lucky. If yu are bot Fellow then i am bot
+        Fellow!
+    </marquee>
+    <footer>
+        <p>Copyright &copy; 1992 DomainaInDomain</p>
+    </footer>
+</body>
+
+</html>

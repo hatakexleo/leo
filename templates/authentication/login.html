@@ -1,0 +1,105 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <title>Domain In Domain</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+
+<body class="bodycss">
+
+    <form method="post">
+        {% csrf_token %}
+
+        <header>
+            <h1 class="h1">DOMAIN-IN-DOMAIN</h1>
+        </header>
+
+        {% for message in messages %}
+        <div class="alert">
+
+            <button id="close_btn" type="button" onclick="close_message()"><strong>Message:</strong> {{ message }}
+                x</button>
+        </div>
+        {% endfor %}
+
+
+        <div class="input_card">
+            <div class="row">
+                <label class="for-label">User Name </label>
+                <input class="input_feed" type="text" placeholder="enter user name" name='user_name'>
+            </div>
+            <div class="row">
+                <label class="for-label">password </label>
+                <input class="input_feed" type="text" placeholder="enter password" name='password'>
+            </div>
+        </div>
+
+        <center>
+            <div class="redirect_section">
+                <center>
+                    <br><br>
+                    <input onclick="window.location.href='homeL.html';" class="anybutton" type="submit" value="login">
+                    <a href="signup.html" class="anybutton">click to signup</a>
+                    <a class="anybutton" href="homeU.html">Go To Home</a>
+                </center>
+        </center>
+
+        <marquee behavior="scroll" direction="left">if you are lucky! then i am Lucky. If yu are bot Fellow then i am
+            bot Fellow!
+        </marquee>
+
+    </form>
+
+    <br><br>
+    <footer>
+        <p>Copyright &copy; 1992 DomainaInDomain</p>
+    </footer>
+</body>
+
+</html>
+
+<!-- 
+<?php
+session_start();
+
+include("connection.php");
+include("functions.php");
+
+if($_SERVER['REQUEST_METHOD']=="POST")
+{
+$user_name = $_POST['user_name'];
+$password = $_POST['password'];
+if(!empty($user_name) && !empty($password) && !is_numeric($user_name))
+{
+    $query = "select * from users where user_name='$user_name' limit 1";
+    $result = mysqli_query($con,$query);
+
+    if($result)
+    {
+        if($result && mysqli_num_rows($result)>0)
+        {
+            $user_data = mysqli_fetch_assoc($result);
+            if($user_data['password']== $password)
+            {
+                $_SESSION['user_id'] = $user_data['user_id'];
+                header("Location: homeL.php");
+                die;
+            }
+        }
+    }
+    echo'<script language="javascript">';
+    echo 'alert("wrong credientials")';
+    echo '</script>';
+}
+else{
+    echo'<script language="javascript">';
+    echo 'alert("valid credientials please!")';
+    echo '</script>';
+}
+
+}
+?> -->

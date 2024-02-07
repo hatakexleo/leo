@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <title>Domain In Domain</title>
+</head>
+
+<body class="bodycss">
+
+
+    <header>
+        <h1 class="h1">DOMAIN-IN-DOMAIN</h1>
+    </header>
+
+    {% for message in messages %}
+    <div class="alert">
+
+        <button id="close_btn" type="button" onclick="close_message()"><strong>Message:</strong> {{ message }}
+            x</button>
+    </div>
+    {% endfor %}
+
+
+    <center>
+        <div class="input_card_em">
+            <button onclick="window.location.href='editP.html';" class="anybutton_em">Edit Password</button>
+            <button onclick="window.location.href='editD.html';" class="anybutton_em">Edit Domain</button>
+            <button onclick="window.location.href='editU.html';" class="anybutton_em">Edit url</button>
+        </div>
+    </center>
+    <center>
+        <div class="redirect_section">
+            <center><br>
+                <a href="homeU.html" class="anybutton">logout</a>
+                <a class="anybutton" href="homeL.html">Go To Home</a>
+            </center>
+    </center>
+    <br><br>
+
+
+    <marquee behavior="scroll" direction="left">if you are lucky! then i am Lucky. If yu are bot Fellow then i
+        am bot
+        Fellow!
+    </marquee>
+
+    <footer>
+        <p>Copyright &copy; 1992 DomainaInDomain</p>
+    </footer>
+
+</body>
+
+</html>

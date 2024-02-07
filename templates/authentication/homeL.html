@@ -1,0 +1,70 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>DOMAIN-IN-DOMAIN</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<section>
+
+    <body class="bodycss">
+
+
+        <header>
+            <h1 class="h1">DOMAIN-IN-DOMAIN</h1>
+        </header>
+
+        {% for message in messages %}
+        <div class="alert">
+
+            <button id="close_btn" type="button" onclick="close_message()"><strong>Message:</strong> {{ message }}
+                x</button>
+        </div>
+        {% endfor %}
+
+        <form method="post">
+            {% csrf_token %}
+            <div class="search_bar_div">
+                <h2>Search Below</h2>
+                <section>
+                    <center>
+                        <input class="input_feed" type="text" placeholder="search here..(eg:google)" name="domain">
+                        <button class="anybutton"><b>SEARCH</b></button>
+                    </center>
+                </section>
+            </div>
+        </form>
+
+        <div class="redirect_section">
+            <center>
+                <section>
+                    <br><br>
+                    <button onclick="window.location.href='homeU.html';" class="anybutton"><b>logout</b></button>
+                    <button onclick="window.location.href='editM.html';" class="anybutton"><b>edit</b></button>
+                </section>
+            </center>
+        </div>
+        <div class="extra">
+            <h2><b>Our main targets</b></h2>
+            <div>
+                <h6>.................</h6>
+                <li>To provide acces</li>
+                <li>make it easy to find your website</li>
+                <li>domainNames</li>
+                <h6>.................</h6>
+            </div>
+        </div>
+
+        <marquee behavior="scroll" direction="left">if you are lucky! then i am Lucky. If yu are bot Fellow then i am
+            bot Fellow!
+        </marquee>
+        <footer>
+            <p>Copyright &copy; 1992 DomainaInDomain</p>
+        </footer>
+    </body>
+</section>
+
+</html>

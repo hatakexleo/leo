@@ -1,0 +1,69 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <title>Domain In Domain</title>
+</head>
+
+<body class="bodycss">
+
+    {% for message in messages %}
+    <div class="alert">
+        <button id="close_btn" type="button" onclick="close_message()"><strong>Message:</strong> {{ message }}
+            x</button>
+    </div>
+    {% endfor %}
+    <form method="post">
+        {% csrf_token %}
+
+        <header>
+            <h1 class="h1">DOMAIN-IN-DOMAIN</h1>
+        </header>
+
+        <div class="input_card">
+            <div class="row">
+                <label class="for-label">User Name </label>
+                <input class="input_feed" type="text" placeholder="enter user name" name="user_name">
+            </div>
+            <div class="row">
+                <label class="for-label">password </label>
+                <input class="input_feed" type="password" placeholder="enter password" name="password">
+            </div>
+            <div class="row">
+                <label class="for-label">re-enter password </label>
+                <input class="input_feed" type="password" placeholder="reenter password" name="reenter_password">
+            </div>
+            <div class="row">
+                <label class="for-label">Domain Name</label>
+                <input class="input_feed" type="text" placeholder="enter domain name" name="domain_name">
+            </div>
+            <div class="row">
+                <label class="for-label">enter url </label>
+                <input class="input_feed" type="url" placeholder="enter url" name="url">
+            </div>
+        </div>
+        <center>
+            <div class="redirect_section">
+                <center>
+                    <br><br>
+                    <a class="anybutton" href="login.html">Login</a>
+                    <a class="anybutton" href="homeU.html">Go To Home</a>
+                    <input class="anybutton" type="submit" value="signup" name="signup">
+                </center>
+        </center>
+        </div>
+        <marquee behavior="scroll" direction="left">if you are lucky! then i am Lucky. If yu are bot Fellow then i
+            am bot Fellow!
+        </marquee>
+    </form>
+    <footer>
+        <p>Copyright &copy; 1992 DomainaInDomain</p>
+    </footer>
+</body>
+
+</html>
